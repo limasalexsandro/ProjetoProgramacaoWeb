@@ -36,6 +36,7 @@ export default async function NovaTurmaPage() {
           <label htmlFor="nome">
             Nome da turma
           </label>
+
           <input
             id="nome"
             type="text"
@@ -48,6 +49,7 @@ export default async function NovaTurmaPage() {
           <label htmlFor="codigo">
             Código da disciplina/turma
           </label>
+
           <input
             id="codigo"
             type="text"
@@ -60,6 +62,7 @@ export default async function NovaTurmaPage() {
           <label htmlFor="semestre">
             Semestre/Período letivo
           </label>
+
           <input
             id="semestre"
             type="text"
@@ -71,6 +74,7 @@ export default async function NovaTurmaPage() {
 
           <div className="button-group">
 
+            
 
 
             <Link href="/turmas">
@@ -80,14 +84,13 @@ export default async function NovaTurmaPage() {
               >
                 Cancelar
               </button>
-
-              <button
+            </Link>
+            <button
               type="submit"
               className="primary-button"
             >
               Criar Turma
             </button>
-            </Link>
 
           </div>
 

@@ -416,7 +416,9 @@ button {
 
 .button-group {
   display: flex;
-  margin-top: 18px;
+  align-items: center;
+  gap: 20px;
+  margin-top: 20px;
 }
 
 
