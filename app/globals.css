@@ -24,6 +24,24 @@ button {
   cursor: pointer;
 }
 
+.primary-button {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  padding: 11px;
+  border: none;
+  border-radius: 8px;
+  background: #2563eb;
+  color: #ffffff;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.2s;
+}
+
+.primary-button:hover {
+  background: #1d4ed8;
+  transform: translateY(-1px);
+}
+
 .login-page {
   min-height: 100vh;
   display: flex;
@@ -371,4 +389,63 @@ button {
   .welcome-card h2 {
     font-size: 25px;
   }
+  
+}
+.turma-form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  max-width: 500px;
+  margin: 30px auto;
+}
+
+
+.turma-form label {
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+
+.turma-form input {
+  padding: 8px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 13px;
+}
+
+
+.button-group {
+  display: flex;
+  margin-top: 18px;
+}
+
+
+.primary-button {
+  background-color: #2563eb;
+  color: white;
+  border: none;
+  padding: 12px 20px;
+  border-radius: 8px;
+  cursor: pointer;
+  
+}
+
+
+.secondary-button {
+  background-color: #dc2626;
+  color: white;
+  border: none;
+  padding: 12px 20px;
+  border-radius: 8px;
+  cursor: pointer;
+  margin-right: 15px;
+}
+
+
+
+
+.primary-button:hover,
+.secondary-button:hover,
+.back-button:hover {
+  opacity: 0.85;
 }
