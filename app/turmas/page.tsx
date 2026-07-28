@@ -29,7 +29,7 @@ export default async function TurmasPage() {
 
         {/* Conteúdo da página */}
       </section>
-      <Link href="/turmas/novas">
+      <Link href=" /turmas/novas">
         <button >+ Nova Turma</button>
       </Link>
 
