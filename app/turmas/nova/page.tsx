@@ -1,9 +1,7 @@
 import { cookies } from "next/headers";
 import { redirect } from "next/navigation";
 import Link from "next/link";
-
 import { verificarToken } from "@/lib/auth";
-import DashboardHeader from "@/app/components/dashboardHeader";
 import { criarTurma } from "./actions";
 
 export default async function NovaTurmaPage() {
@@ -17,11 +15,6 @@ export default async function NovaTurmaPage() {
   if (!dadosToken) redirect("/");
 
   return (
-    <main>
-      <DashboardHeader
-        nome={dadosToken.nome}
-        email={dadosToken.email}
-      />
 
       <section className="dashboard-content">
         <div className="welcome-card">
@@ -98,6 +91,5 @@ export default async function NovaTurmaPage() {
 
       </section>
 
-    </main>
   );
 }
