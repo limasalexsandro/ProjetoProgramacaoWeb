@@ -75,7 +75,12 @@ export default async function NovaTurmaPage() {
           <div className="button-group">
 
             
-
+            <button
+              type="submit"
+              className="primary-button"
+            >
+              Criar Turma
+            </button>
 
             <Link href="/turmas">
               <button
@@ -85,12 +90,7 @@ export default async function NovaTurmaPage() {
                 Cancelar
               </button>
             </Link>
-            <button
-              type="submit"
-              className="primary-button"
-            >
-              Criar Turma
-            </button>
+            
 
           </div>
 

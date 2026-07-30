@@ -49,24 +49,23 @@ export default async function DashboardPage() {
         <div className="dashboard-grid">
           <article className="dashboard-card">
             <h3>Minhas Turmas</h3>
-           
-            <p>
-              Cadastre e gerencie suas disciplinas.
-            </p>
+            <p>Cadastre e gerencie suas disciplinas.</p>
 
             <Link href="/turmas">
               <button type="button">
-                Acessar
+                Abrir módulo
               </button>
             </Link>
           </article>
 
           <article className="dashboard-card">
-            <h3>Avaliações</h3>
-            <p>Crie provas e atividades avaliativas.</p>
-            <button type="button" disabled>
-              Em breve
-            </button>
+            <h3>Banco de Questões</h3>
+            <p>Gerencie os acervos de questões e adicione novos itens.</p>
+            <Link href="/bancos">
+              <button type="button">
+                Abrir módulo
+              </button>
+            </Link>
           </article>
 
           <article className="dashboard-card">

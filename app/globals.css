@@ -432,20 +432,6 @@ button {
   
 }
 
-
-.secondary-button {
-  background-color: #dc2626;
-  color: white;
-  border: none;
-  padding: 12px 20px;
-  border-radius: 8px;
-  cursor: pointer;
-  margin-right: 15px;
-}
-
-
-
-
 .primary-button:hover,
 .secondary-button:hover,
 .back-button:hover {
@@ -505,3 +491,199 @@ button {
   gap: 20px;
   margin-top: 20px;
 }
+
+.submit-area {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.bancos-page,
+.bank-details-page {
+  min-height: 100vh;
+  background: #f3f5f9;
+}
+
+.bancos-header,
+.bank-header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 24px 48px;
+}
+
+.bancos-title,
+.bank-title {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.bancos-title h1,
+.bank-title h1 {
+  font-size: 28px;
+  color: #111827;
+}
+
+.bancos-title p,
+.bank-title p {
+  color: #6b7280;
+  max-width: 690px;
+}
+
+.banco-actions,
+.question-actions {
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+.card-grid,
+.questions-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 20px;
+  padding: 0 48px 48px;
+}
+
+.bank-card,
+.question-card,
+.form-card {
+  background: #ffffff;
+  border-radius: 20px;
+  box-shadow: 0 24px 55px rgba(15, 23, 42, 0.08);
+  padding: 26px;
+}
+
+.bank-card h3,
+.question-card h3,
+.form-card h3 {
+  margin-bottom: 16px;
+  font-size: 18px;
+  color: #111827;
+}
+
+.bank-card p,
+.question-card p,
+.form-card p {
+  color: #4b5563;
+  line-height: 1.7;
+}
+.bank-card a,
+.primary-button,
+.secondary-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 18px;
+  border-radius: 12px;
+  border: none;
+  background: #2563eb;
+  color: #ffffff;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.secondary-button {
+  background: red;
+  color: white;
+}
+.form-field {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 18px;
+}
+
+.form-field label {
+  font-size: 14px;
+  font-weight: 600;
+  color: #374151;
+}
+
+.form-field input,
+.form-field select,
+.form-field textarea {
+  width: 100%;
+  min-height: 44px;
+  padding: 12px 14px;
+  border: 1px solid #d1d5db;
+  border-radius: 12px;
+  background: #f9fafb;
+  outline: none;
+}
+
+.form-field textarea {
+  width: 100%;
+  height: 80px;
+  padding: 13px 14px;
+  border: 1px solid #d1d5db;
+  border-radius: 9px;
+  font: inherit;
+  resize: none;
+}
+
+.submit-area button {
+  padding: 12px 20px;
+  border-radius: 8px;
+  min-width: 120px;
+  font-weight: 700;
+}
+
+.submit-area button {
+  
+  flex: 1;
+  min-width: 120px;
+  padding: 12px 18px;
+  border-radius: 12px;
+  border: none;
+  font-weight: 700;
+  transition:
+    background 0.2s,
+    transform 0.2s;
+}
+
+.submit-area .primary-button {
+  background: #2563eb;
+  color: #ffffff;
+}
+
+.submit-area .primary-button:hover:not(:disabled) {
+  background: #1d4ed8;
+  transform: translateY(-1px);
+}
+
+.submit-area .primary-button:disabled {
+  cursor: not-allowed;
+  opacity: 0.65;
+}
+
+.submit-area .secondary-button {
+  
+  background: #dc2626;
+  color: #ffffff;
+  
+}
+
+.submit-area .secondary-button:hover:not(:disabled) {
+  background: #b91c1c;
+  transform: translateY(-1px);
+}
+
+.submit-area .secondary-button:disabled {
+  cursor: not-allowed;
+  opacity: 0.65;
+}
+.label-small {
+  font-size: 12px;
+  color: #6b7280;
+}
+
+.error-text {
+  color: #dc2626;
+  font-size: 13px;
+}
+
