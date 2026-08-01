@@ -25,11 +25,6 @@ export default function TurmaCard({ turma }: TurmaCardProps) {
       </p>
 
       <div className="turma-card-botoes">
-        <Link href={`/turmas/${turma.id}/alunos`}>
-          <button type="button" className="botao-alunos">
-            Alunos
-          </button>
-        </Link>
 
         <Link href={`/turmas/${turma.id}`}>
           <button type="button" className="botao-abrir">

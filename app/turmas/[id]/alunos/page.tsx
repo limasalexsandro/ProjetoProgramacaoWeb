@@ -1,10 +1,11 @@
 import { cookies } from "next/headers";
 import { redirect } from "next/navigation";
 import Link from "next/link";
-
+import BotaoExcluir from "./BotaoExcluir";
 import DashboardHeader from "@/app/components/dashboardHeader";
 import { verificarToken } from "@/lib/auth";
 import { prisma } from "@/lib/prisma";
+import { removerAluno } from "./actions";
 
 interface PageProps {
   params: Promise<{
@@ -80,7 +81,7 @@ export default async function AlunosPage({ params }: PageProps) {
               <th>Matrícula</th>
               <th>Nome</th>
               <th>Email</th>
-
+              <th>Ações</th>
             </tr>
 
           </thead>
@@ -90,11 +91,9 @@ export default async function AlunosPage({ params }: PageProps) {
             {turma.alunos.length === 0 ? (
 
               <tr>
-
-                <td colSpan={3}>
+                <td colSpan={4}>
                   Nenhum aluno cadastrado.
                 </td>
-
               </tr>
 
             ) : (
@@ -102,11 +101,34 @@ export default async function AlunosPage({ params }: PageProps) {
               turma.alunos.map((aluno) => (
 
                 <tr key={aluno.id}>
+
                   <td>{aluno.matricula}</td>
 
                   <td>{aluno.nome}</td>
 
                   <td>{aluno.email}</td>
+
+                  <td>
+
+                    <form action={removerAluno}>
+
+                      <input
+                        type="hidden"
+                        name="id"
+                        value={aluno.id}
+                      />
+
+                      <input
+                        type="hidden"
+                        name="turmaId"
+                        value={turma.id}
+                      />
+
+                      <BotaoExcluir />
+
+                    </form>
+
+                  </td>
 
                 </tr>
 

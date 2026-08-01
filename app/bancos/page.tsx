@@ -78,6 +78,14 @@ export default async function BancosPage() {
           + Novo Banco
         </a>
 
+        <a
+          className="btn-voltar"
+          href="/dashboard"
+        >
+          Voltar
+        </a>
+
+
         <section className="card-grid">
           {bancos.length === 0 ? (
             <div className="bank-card">

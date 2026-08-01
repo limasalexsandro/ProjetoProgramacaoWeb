@@ -74,11 +74,17 @@ export default async function TurmaPage({ params }: PageProps) {
             Criar Nova Avaliação
           </Link>
 
+           <Link
+            href="/turmas"
+            className="secondary-button" >
+            Voltar
+           </Link>
+
         </div>
 
         <div className="lista-avaliacoes">
 
-          <h2>Avaliações</h2>
+        <h2> Avaliações</h2>
 
           {turma.avaliacoes.length === 0 ? (
 

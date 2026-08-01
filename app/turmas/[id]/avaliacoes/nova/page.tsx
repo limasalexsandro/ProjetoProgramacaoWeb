@@ -65,10 +65,11 @@ export default async function NovaAvaliacaoPage({
           </label>
 
           <textarea
+            
             id="descricao"
             name="descricao"
-            rows={4}
             placeholder="Descrição da avaliação"
+            
           />
 
           <label htmlFor="data">

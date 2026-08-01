@@ -49,33 +49,60 @@ export default async function VisualizarAvaliacao({
 
       <section className="dashboard-content">
 
-        <div className="welcome-card">
-          <h2>{avaliacao.titulo}</h2>
+        <div className="form-card">
 
-          <p>
-            <strong>Turma:</strong> {avaliacao.turma.nome}
-          </p>
+          <h2
+            style={{
+              fontSize: "30px",
+              marginBottom: "30px",
+              color: "#111827",
+            }}
+          >
+            {avaliacao.titulo}
+          </h2>
 
-          <p>
-            <strong>Data:</strong>{" "}
-            {new Date(avaliacao.data).toLocaleDateString("pt-BR")}
-          </p>
+          <div className="form-field">
+            <label>Turma</label>
+            <div>{avaliacao.turma.nome}</div>
+          </div>
 
-          <p>
-            <strong>Descrição:</strong>
-          </p>
+          <div className="form-field">
+            <label>Data da Avaliação</label>
+            <div>
+              {new Date(avaliacao.data).toLocaleDateString("pt-BR")}
+            </div>
+          </div>
 
-          <p>
-            {avaliacao.descricao || "Sem descrição."}
-          </p>
+          <div className="form-field">
+            <label>Descrição</label>
+
+            <div
+              style={{
+                background: "#f9fafb",
+                border: "1px solid #d1d5db",
+                borderRadius: "12px",
+                padding: "16px",
+                minHeight: "120px",
+                lineHeight: "1.7",
+                color: "#374151",
+              }}
+            >
+              {avaliacao.descricao || "Sem descrição."}
+            </div>
+          </div>
+
+          <div className="submit-area">
+
+            <Link
+              href={`/turmas/${id}`}
+              className="secondary-button"
+            >
+              Voltar
+            </Link>
+
+          </div>
+
         </div>
-
-        <Link
-          href={`/turmas/${id}`}
-          className="secondary-button"
-        >
-          Voltar
-        </Link>
 
       </section>
     </main>

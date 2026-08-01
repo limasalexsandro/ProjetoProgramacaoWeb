@@ -68,17 +68,19 @@ export default async function TurmasPage() {
 
 
         <Link href="/turmas/nova">
-
           <button 
             type="button"
-            className="primary-button"
-          >
-
+            className="primary-button" >
             + Nova Turma
-
           </button>
-
         </Link>
+          
+        <a
+          className="btn-voltar"
+          href="/dashboard"
+        >
+          Voltar
+        </a>
 
 
 
