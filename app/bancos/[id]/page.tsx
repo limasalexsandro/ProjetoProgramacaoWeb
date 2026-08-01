@@ -2,6 +2,7 @@ import { verificarToken } from "@/lib/auth";
 import { prisma } from "@/lib/prisma";
 import { cookies } from "next/headers";
 import { redirect } from "next/navigation";
+import QuestionCard from "../QuestionCard";
 
 export default async function BancoDetalhesPage({ params }: { params: Promise<{ id: string }> }) {
   const { id } = await params;
@@ -49,7 +50,7 @@ export default async function BancoDetalhesPage({ params }: { params: Promise<{ 
           <a className="primary-button" href={`/questoes/novo?bancoId=${banco.id}`}>
             Nova questão
           </a>
-          <a className="secondary-button" href="/bancos">
+          <a className="secondary-button back-button" href="/bancos">
             Voltar aos bancos
           </a>
         </div>
@@ -61,13 +62,16 @@ export default async function BancoDetalhesPage({ params }: { params: Promise<{ 
             <h3>Nenhuma questão</h3>
             <p>Cadastre a primeira questão para este banco.</p>
           </article>
-        ) : (
+          ) : (
           banco.questoes.map((questao) => (
             <article key={questao.id} className="question-card">
-              <h3>Questão #{questao.id}</h3>
-              <p className="label-small">Tipo: {questao.tipo === "DISCURSIVA" ? "Discursiva" : "Múltipla escolha"}</p>
-              <p className="label-small">Peso: {questao.peso}</p>
-              <p>Gabarito: {questao.gabarito}</p>
+              <QuestionCard
+                id={questao.id}
+                tipo={questao.tipo}
+                peso={questao.peso}
+                gabarito={questao.gabarito}
+                bancoId={banco.id}
+              />
             </article>
           ))
         )}

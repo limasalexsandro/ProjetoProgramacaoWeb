@@ -1,0 +1,9 @@
+HTTP/1.1 500 Internal Server Error
+vary: rsc, next-router-state-tree, next-router-prefetch, next-router-segment-prefetch
+content-type: application/json
+Date: Sat, 01 Aug 2026 16:35:16 GMT
+Connection: keep-alive
+Keep-Alive: timeout=5
+Transfer-Encoding: chunked
+
+{"mensagem":"Erro interno ao criar avaliação.","error":"\nInvalid `__TURBOPACK__imported__module__$5b$project$5d2f$lib$2f$prisma$2e$ts__$5b$app$2d$route$5d$__$28$ecmascript$29$__[\"prisma\"].avaliacao.create()` invocation in\nC:\\Users\\MateH\\Downloads\\ProjetoProgramacaoWeb-main\\.next\\dev\\server\\chunks\\[root-of-the-server]__1ui54vq._.js:650:165\n\n  647     });\n  648 }\n  649 try {\n→ 650     const avaliacao = await __TURBOPACK__imported__module__$5b$project$5d2f$lib$2f$prisma$2e$ts__$5b$app$2d$route$5d$__$28$ecmascript$29$__[\"prisma\"].avaliacao.create(\nThe table `public.AvaliacaoAluno` does not exist in the current database.","code":"P2021","meta":{"modelName":"Avaliacao","driverAdapterError":{"name":"DriverAdapterError","cause":{"originalCode":"42P01","originalMessage":"relação \"public.AvaliacaoAluno\" não existe","kind":"TableDoesNotExist","table":"public.AvaliacaoAluno"}}}}

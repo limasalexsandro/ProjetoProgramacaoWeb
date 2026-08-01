@@ -1,7 +1,8 @@
-import { cookies } from "next/headers";
-import { redirect } from "next/navigation";
-import Link from "next/link";
 import { verificarToken } from "@/lib/auth";
+import { prisma } from "@/lib/prisma";
+import { cookies } from "next/headers";
+import Link from "next/link";
+import { redirect } from "next/navigation";
 import LogoutButton from "./logout-button";
 
 export default async function DashboardPage() {
@@ -17,6 +18,13 @@ export default async function DashboardPage() {
   if (!dadosToken) {
     redirect("/");
   }
+
+  const totalAlunos = await prisma.aluno.count();
+  const totalAvaliacoes = await prisma.avaliacao.count();
+  const turmasRecentes = await prisma.turma.findMany({
+    orderBy: { createdAt: "desc" },
+    take: 3,
+  });
 
   return (
     <main className="dashboard-page">
@@ -37,13 +45,41 @@ export default async function DashboardPage() {
       </header>
 
       <section className="dashboard-content">
-        <div className="welcome-card">
+        <div className="welcome-card overview-card">
           <p className="welcome-label">Visão geral</p>
           <h2>Bem-vindo, {dadosToken.nome}!</h2>
           <p>
             Utilize a plataforma para organizar disciplinas, avaliações e
-            resultados acadêmicos.
+            resultados acadêmicos. Acesse o Banco de Questões e outros módulos
+            abaixo.
           </p>
+
+          <div className="overview-stats">
+            <div className="overview-stat">
+              <span>Total de alunos ativos</span>
+              <strong>{totalAlunos}</strong>
+            </div>
+            <div className="overview-stat">
+              <span>Total de avaliações criadas</span>
+              <strong>{totalAvaliacoes}</strong>
+            </div>
+          </div>
+
+          <div className="overview-recent">
+            <div className="overview-recent-header">
+              <h3>Turmas recentes</h3>
+            </div>
+            <ul className="recent-turmas-list">
+              {turmasRecentes.map((turma) => (
+                <li key={turma.id}>
+                  <Link href={`/turmas/${turma.id}`} className="recent-turma-link">
+                    <strong>{turma.nome}</strong>
+                    <span>{new Date(turma.createdAt).toLocaleDateString("pt-BR", { day: "2-digit", month: "short", year: "numeric" })}</span>
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
         </div>
 
         <div className="dashboard-grid">
@@ -58,6 +94,8 @@ export default async function DashboardPage() {
             </Link>
           </article>
 
+          
+
           <article className="dashboard-card">
             <h3>Banco de Questões</h3>
             <p>Gerencie os acervos de questões e adicione novos itens.</p>
@@ -68,13 +106,6 @@ export default async function DashboardPage() {
             </Link>
           </article>
 
-          <article className="dashboard-card">
-            <h3>Resultados</h3>
-            <p>Acompanhe notas e desempenho das turmas.</p>
-            <button type="button" disabled>
-              Em breve
-            </button>
-          </article>
         </div>
       </section>
     </main>

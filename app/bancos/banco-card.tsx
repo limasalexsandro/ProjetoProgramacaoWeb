@@ -36,15 +36,9 @@ export default function BancoCard({
         ID: {id}
       </p>
       <button
-        className="secondary-button"
+        className="botao-abrir"
         onClick={handleAbrir}
-        style={{
-          background: "none",
-          border: "1px solid #ccc",
-          padding: "8px 16px",
-          cursor: "pointer",
-          borderRadius: "4px",
-        }}
+        
       >
         Abrir banco
       </button>
